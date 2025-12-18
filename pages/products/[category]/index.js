@@ -1,11 +1,11 @@
 import ProductCard from "@/components/productCard/ProductCard";
 import { useRouter } from "next/router";
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import styles from "@/styles/ProductsByCategory.module.css";
 import connectDB from "@/utils/connectDB";
 import Products from "@/models/Products";
-function ProductsByCategory({ products}) {
+function ProductsByCategory({ products }) {
   const { category } = useRouter().query;
   const [searchKey, setSearchKey] = useState("");
   const [product, setProduct] = useState(products);
@@ -16,7 +16,7 @@ function ProductsByCategory({ products}) {
   useEffect(() => {
     if (searchKey) {
       const searchProduct = products.filter((product) =>
-        product.text.includes(searchKey)
+        product.title.includes(searchKey)
       );
       setProduct(searchProduct);
     } else {
@@ -47,7 +47,7 @@ function ProductsByCategory({ products}) {
 }
 export default ProductsByCategory;
 export async function getServerSideProps(context) {
-  const { category } = context.query; 
+  const { category } = context.query;
 
   await connectDB();
 
