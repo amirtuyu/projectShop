@@ -1,0 +1,88 @@
+.box {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 20px;
+  max-width: 550px;
+  background-color: white;
+}
+
+.headerSection h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.date {
+  margin: 5px 0;
+  color: #666;
+}
+
+.status {
+  margin: 5px 0;
+  color: #444;
+  font-weight: 500;
+}
+
+.tracking {
+  margin: 5px 0;
+  color: green;
+  font-weight: bold;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #eee;
+  margin: 15px 0;
+}
+
+.productsTitle {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.swiper {
+  padding-bottom: 25px;
+}
+
+.productCard {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+.productImage {
+  width: 80px;
+  height: 80px;
+  margin-left: 10px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.productTitle {
+  margin: 0;
+  font-weight: bold;
+}
+
+.productCount {
+  margin: 4px 0;
+  color: #555;
+}
+
+.productPrice {
+  margin: 0;
+  color: green;
+}
+
+.totalPriceBox {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #e4ffe4;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}

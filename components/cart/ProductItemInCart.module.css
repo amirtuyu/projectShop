@@ -1,0 +1,53 @@
+.productItemInCart {
+  border-radius: 5px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  border: 1px dotted silver;
+  text-align: center;
+  background-color: white;
+}
+
+.productItemInCart .cardLeft {
+  height: 100px;
+}
+.productItemInCart .cardLeft img {
+  max-height: 100%;
+}
+
+.productItemInCart .cardRight {
+  height: 100px;
+  position: relative;
+  top: 10px;
+}
+.cardMiddle button {
+  all: unset;
+  max-width: 30px;
+  width: 100%;
+  padding: 5px 10px;
+  border: 1px solid silver;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cardMiddle span {
+  display: inline-block;
+  max-width: 30px;
+  width: 100%;
+}
+
+.cardLeft,
+.cardMiddle,
+.cardRight {
+  width: 33.33%;
+}
+.cardMiddle {
+  display: flex;                
+  justify-content: center;     
+  align-items: center;          
+  flex-wrap: nowrap;           
+  gap: 5px;                     
+  min-width: 0;                
+}

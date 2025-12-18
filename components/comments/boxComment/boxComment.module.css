@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border: 1px solid lightgray;
+  max-width: 1200px;
+  font-family: "Vazir", sans-serif;
+  margin-top: 25px;
+}
+
+/* --- ردیف بالای آیکون، نام و تاریخ --- */
+.icon-name-date {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.icon {
+  font-size: 40px;
+  color: #ccc;
+  margin-right: 10px;
+  position: relative;
+  left: 10px;
+}
+
+.name p {
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  font-size: 15px;
+  position: relative;
+  top: -12px;
+}
+
+.date p {
+  font-size: 12px;
+  color: #999;
+  margin: 0 0 0 auto; /* میره سمت راست */
+  position: relative;
+  top: -12px;
+  right: 5px;
+}
+
+/* --- متن کامنت --- */
+.comment p {
+  font-size: 14px;
+  color: #444;
+  margin: 5px 0 0 0;
+  line-height: 1.5;
+   position: relative;
+   bottom: 15px;
+}
+
+/* --- واکنشگرایی --- */
+@media (max-width: 500px) {
+  .container {
+    padding: 12px 15px;
+  }
+
+  .icon {
+    font-size: 35px;
+  }
+
+  .name p {
+    font-size: 14px;
+  }
+
+  .date p {
+    font-size: 11px;
+  }
+
+  .comment p {
+    font-size: 13px;
+  }
+}

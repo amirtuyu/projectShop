@@ -1,0 +1,83 @@
+.containerComments{
+    background-color: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.header{
+    border-bottom: 1px solid lightgray;
+    padding-right: 20px;
+}
+
+.header p{
+    font-size: 25px;
+
+}
+.insertComments {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 15px;
+}
+
+.boxInsert {
+  width: 100%;
+  max-width: 500px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.boxInsert form {
+  display: flex;
+  flex-direction: column;
+}
+
+.boxInsert label {
+  margin-bottom: 6px;
+  color: #444;
+  font-size: 14px;
+}
+
+.boxInsert input,
+.boxInsert textarea {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-family: inherit;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.boxInsert input:focus,
+.boxInsert textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+.boxInsert textarea {
+  resize: none;
+  height: 100px;
+}
+
+.boxInsert button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.boxInsert button:hover {
+  background-color: #0056b3;
+}
+
+/* #f8f9fa */

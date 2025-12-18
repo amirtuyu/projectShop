@@ -1,0 +1,97 @@
+.container {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column; /* باعث میشه فرم و لودر زیر هم قرار بگیرند */
+  align-items: center; /* هر دو وسط چین شوند */
+  margin-bottom: 160px;
+}
+.otpForm {
+  font-family: "Vazirmatn", sans-serif;
+  margin: auto;
+  width: 400px;
+  padding: 30px 40px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  direction: rtl;
+}
+.otpForm input {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 320px;
+}
+.otpForm button {
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  width: 100%;
+  margin-top: 15px;
+}
+.otpForm button {
+  background-color: rgb(3, 157, 3);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+.otpForm h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: sans-serif;
+}
+.otpForm .tryAgain {
+  font-size: 13px;
+  color: gray;
+  margin-top: 15px;
+}
+.otpForm .sendAgain {
+  font-size: 14px;
+  color: rgb(3, 157, 3);
+  margin-top: 15px;
+  cursor: pointer;
+}
+.otpForm .spinner {
+  animation: soinner 1s infinite;
+}
+.otpForm .pervStep {
+  display: flex;
+  direction: ltr;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.otpForm .pervStep:hover {
+  color: rgb(3, 157, 3);
+}
+.otpForm .pervStep span {
+  font-size: 13px;
+}
+.loader {
+  margin-top: 20px;
+  width: 48px;
+  height: 48px;
+  border: 5px solid;
+  border-color: #ff3d00 transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}

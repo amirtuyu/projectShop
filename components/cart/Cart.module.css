@@ -1,0 +1,121 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cartContainer {
+  max-width: 800px;
+  margin-top:0px;
+  max-height: 450px;
+  overflow-y: auto;
+  border-radius: 5px;
+  padding: 10px 25px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    margin-left: 20px;
+    width: 100%;
+     overflow-y: scroll; 
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+}
+.cartContainer p {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.totalContainer {
+  flex-direction: column;
+  justify-content: space-between;  
+  border-radius: 16px;
+  padding: 20px;
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  width: 100%;
+  max-width: 400px;
+  width: 100%;
+}
+.containerHistory{
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 1600px) {
+  .totalContainer {
+    display: flex;
+  }
+}
+@media (max-width: 794px) {
+.container{
+  display: flex;
+  flex-direction: column;
+}
+.cartContainer {
+  max-height: 400px;
+}
+.totalContainer{
+  margin-top: 40px;
+}
+}
+.container {
+  min-height: 400px;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h2 {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+
+.amount {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+}
+
+.amount small {
+  font-size: 14px;
+  color: #555;
+  margin-right: 4px;
+}
+
+.divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 16px 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.payButton {
+  background: linear-gradient(135deg, #007aff, #0056d6);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.payButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.payButton:active {
+  transform: translateY(0);
+  box-shadow: none;
+}

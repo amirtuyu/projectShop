@@ -1,0 +1,120 @@
+.containerUser {
+  margin: 0 auto;
+  margin-top: 40px;
+  max-width: 750px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.containerBoxUser {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow: auto;
+  scrollbar-width: none;
+}
+.containerBoxUser:hover {
+  overflow: auto;
+}
+.containerUser h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.containerUser input {
+  width: 250px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin-inline-end: 10px;
+  transition: all 0.2s ease;
+}
+
+.containerUser input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+.containerUser button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.containerUser button:hover {
+  background-color: #0056b3;
+}
+
+.boxUser {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-top: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: grid;
+  grid-template-columns: 180px 140px 1fr; /* سه ستون منظم */
+  align-items: center;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-top: 15px;
+  
+}
+
+.nameuser,
+.userPassword,
+.phone {
+  flex: 1;
+}
+
+.nameuser p,
+.userPassword p,
+.phone p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.containerUser hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.userPassword p {
+  color: black;
+  font-size: 17px;
+}
+
+.email,
+.historyUser,
+.nameuser {
+  padding: 0 10px;
+  white-space: nowrap; /* از رفتن به خط بعد جلوگیری میکنه */
+  overflow: hidden;
+  text-overflow: ellipsis; /* متن طولانی زیرهم نمی‌ریزد */
+}
+
+.historyUser:hover {
+  cursor: pointer;
+}
+@media (max-width: 1000px) {
+  .containerUser {
+    margin-top: -20px;
+  }
+}

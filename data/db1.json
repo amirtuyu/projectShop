@@ -1,0 +1,346 @@
+{
+  "laptops": [
+    {
+      "id": 1,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop01.jpg",
+      "text": "لپ تاپ لنوو 15.6 اینچی مدل ThinkBook 15 پردازنده Core i3 1115G4 رم 8GB حافظه 256GB SSD",
+      "price": 24800000,
+      "brand": "lenovo"
+    },
+    {
+      "id": 2,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop02.jpg",
+      "text": "لپ تاپ لنوو 15.6 اینچی مدل Ideapad Gaming 3 پردازنده Core i5-11300H رم 16GB حافظه 1TB",
+      "price": 48000000,
+      "brand": "lenovo"
+    },
+    {
+      "id": 3,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop03.jpg",
+      "text": "لپ تاپ لنوو 15.6 اینچی مدل Ideapad 3 پردازنده Core i7 1165G7 رم 12GB حافظه 1TB 256GB SSD",
+      "price": 38800000,
+      "brand": "lenovo"
+    },
+    {
+      "id": 4,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop04.jpg",
+      "text": "لپ تاپ لنوو 15.6 اینچی Full HD مدل Ideapad 3 پردازنده N4020 رم 4GB حافظه 1TB گرافیک Intel",
+      "price": 24800000,
+      "brand": "lenovo"
+    },
+    {
+      "id": 5,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop05.jpg",
+      "text": "لپ تاپ ایسوس 15.6 اینچی مدل X515EP پردازنده Core i5 1135G7 رم 8GB حافظه 512GB SSD گرافیک 2GB",
+      "price": 34000000,
+      "brand": "asus"
+    },
+    {
+      "id": 6,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop06.jpg",
+      "text": "لپ تاپ ایسوس 15.6 اینچی مدل TUF FX506HC پردازنده Core i5 11400H رم 16GB حافظه 1TB SSD",
+      "price": 50000000,
+      "brand": "asus"
+    },
+    {
+      "id": 7,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop07.jpg",
+      "text": "لپ تاپ ایسوس 15.6 اینچی مدل TUF FX506HE پردازنده Core i5 11400H رم 16GB حافظه 512GB",
+      "price": 51800000,
+      "brand": "asus"
+    },
+    {
+      "id": 8,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop08.jpg",
+      "text": "لپ تاپ ایسوس 15.6 اینچی مدل TUF Gaming FX517ZR پردازنده Core i7 12650H رم 16GB حافظه",
+      "price": 75000000,
+      "brand": "asus"
+    },
+    {
+      "id": 9,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop09.jpg",
+      "text": "لپ تاپ لنوو 15.6 اینچی مدل Ideapad Gaming 3 پردازنده Core i7 12650H رم 32GB حافظه 1TB SSD",
+      "price": 61000000,
+      "brand": "lenovo"
+    },
+    {
+      "id": 10,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop10.jpg",
+      "text": "لپ تاپ لنوو 15.6 اینچی مدل V15 پردازنده Core i5 1135G7 رم 8GB حافظه 1TB 256GB SSD گرافیک 2GB",
+      "price": 30000000,
+      "brand": "lenovo"
+    },
+    {
+      "id": 11,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop11.jpg",
+      "text": "لپ تاپ اچ پی 15.6 اینچی مدل Victus 15-FA1093DX پردازنده Core i5-13420H رم 16GB حافظه 512GB",
+      "price": 50100000,
+      "brand": "hp"
+    },
+    {
+      "id": 12,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop12.jpg",
+      "text": "لپ تاپ ایسوس 15.6 اینچی مدل TUF FX506HF پردازنده Core i5 11400H رم 16GB حافظه 1TB SSD",
+      "price": 24800000,
+      "brand": "asus"
+    },
+    {
+      "id": 13,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop13.jpg",
+      "text": "لپ تاپ ایسوس 15.6 اینچی مدل ROG Strix G513RC پردازنده Ryzen 7 6800H رم 16GB حافظه 1TB SSD",
+      "price": 73000000,
+      "brand": "asus"
+    },
+    {
+      "id": 14,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop14.jpg",
+      "text": "لپ تاپ لنوو 15.6 اینچی مدل Ideapad 3 پردازنده Core i5 1235U رم 8GB حافظه 512GB SSD",
+      "price": 308000000,
+      "brand": "lenovo"
+    },
+    {
+      "id": 15,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop15.jpg",
+      "text": "لپ تاپ 15 اینچی مایکروسافت مدل Surface Laptop 4 پردازنده Core i7-1185G7 رم 16GB حافظه 256GB",
+      "price": 626000000,
+      "brand": "microsoft"
+    },
+    {
+      "id": 16,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop16.jpg",
+      "text": "لپ تاپ 14.4 اینچی مایکروسافت مدل Surface Laptop Studio پردازنده Core i7-11370H رم 16GB",
+      "price": 98500000,
+      "brand": "microsoft"
+    },
+    {
+      "id": 17,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop17.jpg",
+      "text": "لپ تاپ اچ پی 15.6 اینچی مدل Victus 15-FA1093DX پردازنده Core i5-13420H رم 16GB حافظه 512GB",
+      "price": 50100000,
+      "brand": "hp"
+    },
+    {
+      "id": 18,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop18.jpg",
+      "text": "لپ تاپ 15.6 اینچی اچ پی مدل VICTUS 15 FA1021 - B پردازنده Core i7 رم 16GB حافظه 512GB SSD",
+      "price": 62000000,
+      "brand": "hp"
+    },
+    {
+      "id": 19,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop19.jpg",
+      "text": "لپ تاپ 13.5 اینچی اچ پی مدل Spectre x360 14 EF2013dx - C پردازنده Core i7 رم 16GB حافظه 2TB",
+      "price": 83000000,
+      "brand": "hp"
+    },
+    {
+      "id": 20,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop20.jpg",
+      "text": "لپ تاپ ام اس آی 16 اینچی مدل Summit E16 Flip A13VFT پردازنده Core i7 1360P رم 32GB حافظه 2TB",
+      "price": 105000000,
+      "brand": "msi"
+    },
+    {
+      "id": 21,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop21.jpg",
+      "text": "لپ تاپ ام اس آی 15.6 اینچی مدل GF63 Thin 12UCX پردازنده Core i7 12650H رم 16GB حافظه 1TB SSD",
+      "price": 53000000,
+      "brand": "msi"
+    },
+    {
+      "id": 22,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop22.jpg",
+      "text": "لپ تاپ ام اس آی 15.6 اینچی مدل Cyborg 15 A12VE پردازنده Core i7-12650H رم 16GB حافظه 1TB SSD",
+      "price": 73000000,
+      "brand": "dell"
+    },
+    {
+      "id": 23,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop23.jpg",
+      "text": "لپ تاپ دل 15.6 اینچی مدل Vostro 3520-X پردازنده Core i7 1255U رم 32GB حافظه 1TB SSD گرافیک 2GB",
+      "price": 54000000,
+      "brand": "dell"
+    },
+    {
+      "id": 24,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop24.jpg",
+      "text": "لپ تاپ دل 15.6 اینچی مدل Vostro 3510 پردازنده Core i7 1165G7 رم 16GB حافظه 1TB 500GB SSD",
+      "price": 49800000,
+      "brand": "dell"
+    },
+    {
+      "id": 25,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop25.jpg",
+      "text": "MacBook Air اپل 13 اینچ مدل MGN63 2020 پردازنده M1 رم 8GB حافظه 256GB SSD",
+      "price": 59000000,
+      "brand": "apple"
+    },
+    {
+      "id": 26,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop26.jpg",
+      "text": "لپ تاپ دل 15.6 اینچی مدل Vostro 3510 پردازنده Core i7 1165G7 رم 16GB حافظه 1TB 500GB SSD",
+      "price": 49800000,
+      "brand": "apple"
+    },
+    {
+      "id": 27,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop27.jpg",
+      "text": "لپ تاپ اپل 16 اینچ مدل Mac Book Pro 2023 16inch MNWC3 پردازنده M2 Pro رم 16GB حافظه 512GB SSD",
+      "price": 157000000,
+      "brand": "apple"
+    },
+    {
+      "id": 28,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/laptop28.jpg",
+      "text": "لپ تاپ اپل 15.3 اینچی مدل Apple MacBook Air 2023 Silver MQKT3 پردازنده M2 رم 8GB حافظه 512GB",
+      "price": 87800000,
+      "brand": "apple"
+    }
+  ],
+  "mobiles": [
+    {
+      "id": 29,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/mobile01.jpg",
+      "text": "گوشی موبایل اپل مدل iPhone 13 Not Active ظرفیت 128GB دو سیم کارت",
+      "price": 42000000,
+      "brand": "apple"
+    },
+    {
+      "id": 30,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/mobile02.jpg",
+      "text": "گوشی موبایل اپل مدل iPhone 13 Pro Max ظرفیت 128GB تک سیم کارت",
+      "price": 85000000,
+      "brand": "apple"
+    },
+    {
+      "id": 31,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/mobile03.jpg",
+      "text": "گوشی موبایل اپل مدل iPhone 13 Pro ظرفیت 1TB تک سیم کارت",
+      "price": 92500000,
+      "brand": "apple"
+    },
+    {
+      "id": 32,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/mobile04.jpg",
+      "text": "گوشی موبایل شیائومی مدل Poco F5 دو سیم‌ کارت ظرفیت 256GB",
+      "price": 18300000,
+      "brand": "xiaomi"
+    },
+    {
+      "id": 33,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/mobile05.jpg",
+      "text": "گوشی موبایل سامسونگ مدل Galaxy S21 FE 5G دو سیم کارت ظرفیت 256",
+      "price": 23100000,
+      "brand": "samsung"
+    },
+    {
+      "id": 34,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/mobile06.jpg",
+      "text": "گوشی موبایل سامسونگ مدل Galaxy A14 دو سیم کارت ظرفیت 64",
+      "price": 6800000,
+      "brand": "samsung"
+    },
+    {
+      "id": 35,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/mobile07.jpg",
+      "text": "گوشی موبایل سامسونگ مدل Galaxy A24 دو سیم کارت ظرفیت 128",
+      "price": 10900000,
+      "brand": "samsung"
+    },
+    {
+      "id": 36,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/mobile08.jpg",
+      "text": "گوشی موبایل سامسونگ مدل Galaxy S23 FE دو سیم‌کارت ظرفیت 256",
+      "price": 25700000,
+      "brand": "samsung"
+    },
+    {
+      "id": 37,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/mobile09.jpg",
+      "text": "گوشی موبایل سامسونگ مدل Galaxy S24 ULTRA دو سیم‌کارت ظرفیت 256",
+      "price": 69100000,
+      "brand": "samsung"
+    },
+    {
+      "id": 38,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/mobile10.jpg",
+      "text": "گوشی موبایل سامسونگ مدل Galaxy A34 دو سیم کارت ظرفیت 256",
+      "price": 14900000,
+      "brand": "samsung"
+    },
+    {
+      "id": 39,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/mobile11.jpg",
+      "text": "گوشی موبایل شیائومی مدل Poco X5 5G دو سیم‌ کارت ظرفیت 256GB",
+      "price": 9900000,
+      "brand": "xiaomi"
+    },
+    {
+      "id": 40,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/mobile12.jpg",
+      "text": "گوشی موبایل شیائومی مدل Redmi Note 11 Pro Plus 5G دو سیم‌ کارت",
+      "price": 14400000,
+      "brand": "xiaomi"
+    }
+  ],
+  "cameras": [
+    {
+      "id": 41,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/camera01.jpg",
+      "text": "دوربین دیجیتال کانن مدل EOS 4000D به همراه لنز 18-55 میلی متر",
+      "price": 42000000,
+      "brand": "canon"
+    },
+    {
+      "id": 42,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/camera02.jpg",
+      "text": "دوربین دیجیتال کانن Eos 80D با کیت 18-135",
+      "price": 78000000,
+      "brand": "canon"
+    },
+    {
+      "id": 43,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/camera03.jpg",
+      "text": "دوربین دیجیتال کانن مدل پاورشات اس ایکس 60",
+      "price": 62500000,
+      "brand": "canon"
+    },
+    {
+      "id": 44,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/camera04.jpg",
+      "text": "دوربین دیجیتال کانن مدل EOS 77D با لنز 135-18 میلیمتر",
+      "price": 18300000,
+      "brand": "canon"
+    },
+    {
+      "id": 45,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/camera05.jpg",
+      "text": "دوربین دیجیتال نیکون D 3400 کیت 18-55 VR",
+      "price": 46500000,
+      "brand": "nikon"
+    },
+    {
+      "id": 46,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/camera06.jpg",
+      "text": "دوربین دیجیتال نیکون D7500 With 18-140mm",
+      "price": 5800000,
+      "brand": "samsung"
+    },
+    {
+      "id": 47,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/camera07.jpg",
+      "text": "دوربین دیجیتال نیکون مدل D3500 به همراه لنز 18-55 میلی متر VR AF-P",
+      "price": 42900000,
+      "brand": "samsung"
+    },
+    {
+      "id": 48,
+      "image": "https://dl.next1code.ir/images/nextjs/chapter04/camera08.jpg",
+      "text": "دوربین دیجیتال نیکون دی 3200 کیت 105-18 میلیمتر",
+      "price": 32700000,
+      "brand": "samsung"
+    }
+  ],
+  "tablets": [],
+  "consoles": []
+}

@@ -1,0 +1,33 @@
+.menu {
+   background-color: rgb(255, 255, 255);
+   border-bottom: 1px solid rgb(212, 211, 211);
+}
+.menu ul {
+   display: flex;
+   align-items: center;
+}
+
+.menu ul li {
+   padding: 20px 15px;
+   display: flex;
+   align-items: center;
+   gap: 3px;
+}
+
+.menu ul li a {
+   text-decoration: none;
+   color: rgb(58, 57, 57);
+   font-size: 14px;
+}
+.menu ul li a:hover {
+   color: rgb(17, 17, 17);
+   font-weight: bold;
+}
+
+@media screen and (max-width: 992px) {
+   .menu {
+      display: none;
+   }
+}
+
+

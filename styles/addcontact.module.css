@@ -1,0 +1,116 @@
+.container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Vazirmatn", sans-serif;
+  margin-bottom: 160px;
+}
+.container form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  color: rgb(57, 57, 57);
+  font-size: 14px;
+  width: 400px;
+  padding: 30px 40px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  direction: rtl;
+}
+.container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: sans-serif;
+  font-size: 35px;
+}
+.container form > .inputWrapper > input {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container select {
+  all: unset;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 10px;
+}
+.container button {
+  all: unset;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(3, 157, 3);
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+.loader {
+  margin-top: 20px;
+  width: 48px;
+  height: 48px;
+  border: 5px solid;
+  border-color: #ff3d00 transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.container .password:focus {
+  border: 1px solid black;
+}
+.container svg {
+  cursor: pointer;
+}
+.container .notRegister {
+  text-align: center;
+  color: gray;
+}
+.container .notRegister a {
+  text-decoration: none;
+  color: rgb(3, 157, 3);
+}
+.inputWrapper {
+  position: relative;
+}
+.inputWrapper input {
+  width: 100%;
+  padding-right: 35px;
+}
+.validIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: green;
+  font-size: 18px;
+}
+.invalidIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: red;
+  font-size: 18px;
+}
+.valueTrue {
+  border: 2.3px solid rgb(3, 157, 3) !important;
+}
+.valueTrue:focus {
+  outline: none !important;
+  border: 2.3px solid rgb(3, 157, 3) !important;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

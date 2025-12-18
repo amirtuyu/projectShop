@@ -1,0 +1,20 @@
+.ContainerForm {
+  max-width: 750px;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  margin-bottom: 20px;
+}
+@media (max-width: 1000px) {
+  .ContainerForm {
+    margin-top: -20px;
+  }
+}
+.cardTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+  padding-bottom: 10px;
+}

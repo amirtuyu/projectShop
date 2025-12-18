@@ -1,0 +1,13 @@
+.aboutContainer{
+    background: #fff;
+    margin: 30px 16px;
+    padding: 32px 16px;
+    border-radius: 10px;
+}
+.aboutContainer h4{
+    margin: 16px 0;
+}
+.aboutContainer{
+    font-size: 14px;
+    color: rgb(107, 106, 106);
+}

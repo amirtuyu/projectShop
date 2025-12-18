@@ -1,0 +1,16 @@
+.footer{
+    margin-top: 70px;
+    padding: 16px 0;
+    border-top: 3px double rgb(208, 208, 208);
+}
+.footer ul li{
+    color: rgb(73, 73, 73);
+    font-size: 14px;
+    margin: 5px 0;
+}
+.socials ul{
+    display: flex;
+    padding: 10px 0;
+    align-items: center;
+    gap: 10px;
+}
