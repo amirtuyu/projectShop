@@ -1,0 +1,13 @@
+{
+  "platform": "next",
+  "node": {
+    "version": "18"
+  },
+  "build": {
+    "command": "npm run build"
+  },
+  "start": {
+    "command": "npm run start",
+    "port": "$PORT"
+  }
+}
