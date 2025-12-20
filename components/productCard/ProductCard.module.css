@@ -47,3 +47,42 @@
 .cardFooter button:hover {
    background: #0059c9;
 }
+.cardContainer {
+  max-width: 300px;
+  width: clamp(200px, 90%, 300px); /* کارت از 200px تا 300px و حداکثر 90% عرض viewport */
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.cardHeader img {
+  width: 100%;  /* تصویر همیشه متناسب با عرض کارت */
+  height: auto; /* حفظ نسبت ابعاد */
+  object-fit: cover;
+}
+.cardMiddle {
+  font-size: clamp(12px, 2vw, 16px); /* اندازه متن متناسب با عرض */
+  padding: clamp(6px, 2vw, 10px);
+  max-height: none;
+}
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(8px, 2vw, 15px);
+  gap: clamp(5px, 2vw, 12px);
+}
+
+.cardFooter button {
+  font-size: clamp(10px, 2vw, 14px);
+  padding: clamp(3px, 1vw, 8px) clamp(6px, 2vw, 12px);
+  border-radius: clamp(6px, 2vw, 10px);
+  white-space: nowrap;
+}
+
+.cardFooter p {
+  font-size: clamp(12px, 2vw, 16px);
+}

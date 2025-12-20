@@ -29,13 +29,14 @@ export default function Home({ productList }) {
   return (
     <Container>
       <h1 style={{ margin: "26px 0" }}>لپ تاپ(laptop)</h1>
-      <Row>
+      <Row className="g-2">
         {productList.laptops.slice(0, 4).map((product) => (
           <Col key={product._id} xs={6} sm={6} md={4} lg={3}>
             <ProductCard product={product} />
           </Col>
         ))}
       </Row>
+
       <h1 style={{ margin: "26px 0" }}>موبایل(mobile)</h1>
       <Row>
         {productList.mobiles.slice(0, 4).map((product) => (

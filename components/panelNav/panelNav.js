@@ -14,8 +14,8 @@ export default function PanelNav() {
             pathname === "/admin-panel/insertProduct" ? styles.active : ""
           }`}
         >
+          <PackagePlus size={24} className={styles.icon} />
           <p> اضافه کردن محصول</p>
-          <PackagePlus size={24} style={{position:"absolute",top:"321px"}}/>
         </div>
       </Link>
       <Link href="/admin-panel/showUsers">
@@ -24,8 +24,8 @@ export default function PanelNav() {
             pathname === "/admin-panel/showUsers" ? styles.active : ""
           }`}
         >
+          <FaUsers size={24} />
           <p> مشاهده کاربران</p>
-          <FaUsers size={24} style={{position:"absolute",top:"440px"}}/>
         </div>
       </Link>
       <Link href="/admin-panel/orders">
@@ -34,8 +34,8 @@ export default function PanelNav() {
             pathname === "/admin-panel/orders" ? styles.active : ""
           }`}
         >
+          <TiShoppingCart size={24} />
           <p> سفارشات</p>
-          <TiShoppingCart size={24} style={{position:"absolute",top:"560px"}}/>
         </div>
       </Link>
     </div>

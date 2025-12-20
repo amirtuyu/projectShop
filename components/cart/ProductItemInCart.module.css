@@ -51,3 +51,38 @@
   gap: 5px;                     
   min-width: 0;                
 }
+.cardLeft {
+  flex: 0 0 80px;
+}
+
+.cardMiddle {
+  flex: 0 0 110px;
+}
+
+.cardRight {
+  flex: 1;
+}
+.productItemInCart {
+  justify-content: flex-start;
+  gap: 10px;
+}
+@media (max-width: 420px) {
+  .productItemInCart {
+    flex-wrap: wrap;
+  }
+
+  .cardLeft {
+    flex: 0 0 70px;
+  }
+
+  .cardMiddle {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  .cardRight {
+    flex: 1;
+  }
+}

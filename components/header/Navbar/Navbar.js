@@ -12,7 +12,6 @@ import { FaCog } from "react-icons/fa";
 import axios from "axios";
 import toast from "react-hot-toast";
 function Navbar() {
-  
   const { route } = useRouter();
   const logOutHandler = async () => {
     await axios
@@ -21,7 +20,7 @@ function Navbar() {
         if (response.status == 200) {
           toast.success(response.data.message, { duration: 5000 });
           setIsAuthenticated(false);
-          setUserPayload(false)
+          setUserPayload(false);
         }
       })
       .catch((error) => {
@@ -35,7 +34,7 @@ function Navbar() {
         }
       });
   };
-  const { setIsAuthenticated, isAuthenticated, userPayload ,setUserPayload} =
+  const { setIsAuthenticated, isAuthenticated, userPayload, setUserPayload } =
     useContext(appContext);
   const addToCart = useSelector((state) => state.addToCart);
   const { setOpenAndClose } = useContext(appContext);
@@ -68,16 +67,18 @@ function Navbar() {
             )}
             {isAuthenticated ? (
               <Link
-                style={{ marginRight: "25px" }}
-                className={styles.login}
+                className={`${styles.login} ${styles.logout}`}
                 href={"/auth/login"}
                 onClick={logOutHandler}
               >
-                 خروج  
-                 <CgLogOut /> 
+                خروج
+                <CgLogOut />
               </Link>
             ) : (
-              <Link className={styles.login} href={"/auth/login"}>
+              <Link
+                className={`${styles.login} ${styles.logout}`}
+                href={"/auth/login"}
+              >
                 <CgLogIn />
                 ورود
               </Link>

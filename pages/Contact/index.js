@@ -1,4 +1,7 @@
+import Orders from "@/models/Orders"
 import styles from "@/styles/Contact.module.css"
+import ValidateToken from "@/utils/auth"
+import connectDB from "@/utils/connectDB"
 import { FaPhone } from "react-icons/fa6"
 import { IoLocationSharp } from "react-icons/io5"
 import { IoTimeSharp } from "react-icons/io5"
@@ -59,3 +62,23 @@ function Contact() {
    )
 }
 export default Contact
+export async function getServerSideProps(context) {
+  const payload = ValidateToken(context);
+  if (!payload) {
+    return {
+      redirect: {
+        destination: "/?message=login_required",
+      },
+    };
+  }
+  await connectDB();
+  const userOrders = await Orders.find({ userId: payload.userId }).sort({
+    createdAt: -1,
+  });
+
+  return {
+    props: {
+      orders: JSON.parse(JSON.stringify(userOrders)), // تبدیل ObjectId و Date
+    },
+  };
+}
