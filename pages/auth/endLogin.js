@@ -29,7 +29,7 @@ export default function EndLogin() {
     await axios
       .get("/api/auth/endLogin")
       .then((res) => {
-        toast.success(res.data.message, { duration: 5000 });
+        toast.success(`ارسال کد دارای مشکل هست این کد تایید شماست:${res.data.code}`, { duration: 5000 });
         setTimer(120);
       })
       .catch((error) => {

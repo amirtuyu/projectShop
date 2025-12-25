@@ -71,6 +71,7 @@ export default async function handler(req, res) {
 
       return res.status(200).json({
         message: "کد تایید ارسال شد. لطفا کد را وارد کنید",
+        code,
       });
     }
 
@@ -133,7 +134,7 @@ export default async function handler(req, res) {
 
       return res
         .status(200)
-        .json({ message: "ورود با موفقیت انجام شد", token ,payload});
+        .json({ message: "ورود با موفقیت انجام شد", token, payload });
     }
   } catch (err) {
     return res.status(500).json({ message: "مشکلی در سرور به وجود آمد" });
