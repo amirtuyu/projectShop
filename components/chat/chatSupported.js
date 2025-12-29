@@ -20,16 +20,16 @@ export default function ChatBoxSupported() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [initialList, setInitialList] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0); // شماره چت فعلی
+  const [currentIndex, setCurrentIndex] = useState(null); // شماره چت فعلی
   const [userName, setUserName] = useState(""); // نام کاربر فعلی
   const [userId, setUserId] = useState(""); // آی‌دی کاربر فعلی
   const unreadCount = initialList.length;
-
   useEffect(() => {
-    if (initialList.length > 0) {
+    if (initialList.length > 0 && currentIndex === null) {
       loadChat(0);
     }
   }, [initialList]);
+
   useEffect(() => {
     if (!isAuthenticated || !userPayload?.userId) return;
 
@@ -55,20 +55,20 @@ export default function ChatBoxSupported() {
 
         receiveMessageHandler = (data) => {
           setInitialList((prev) => {
-            const index = prev.findIndex(
-              (chat) => chat.userId === data.userId
-            );
+            const index = prev.findIndex((chat) => chat.userId === data.userId);
 
             if (index !== -1) {
               const newList = [...prev];
               newList[index] = data;
 
-              if (index === currentIndex) {
-                setMessages(data.messages);
-                setCurrentIndex(index);
-                setUserName(data.name);
-                setUserId(data.userId);
-              }
+              setCurrentIndex((currIndex) => {
+                if (index === currIndex) {
+                  setMessages(data.messages);
+                  setUserName(data.name);
+                  setUserId(data.userId);
+                }
+                return currIndex;
+              });
 
               return newList;
             }
@@ -133,50 +133,26 @@ export default function ChatBoxSupported() {
       });
   };
   const sendMessage = async (text) => {
-    const createdAt = Date.now();
     setLoding(true);
     try {
-      const res = await axios.post("/api/chatSupported", {
-        userId: userId,
-        message: {
-          message: text,
-          sender: "support",
-        },
-      });
+      const formData = new FormData();
+      formData.append("userId", userId);
+      formData.append("type", "text");
+      formData.append("sender", "support");
+      formData.append("content", text);
+      const res = await axios.post("/api/chatSupported", formData);
 
       if (res.status == 200) {
         toast.success("پیام شما برای کاربر ارسال شد");
         setLoding(false);
-        setMessages((prev) => [
-          ...prev,
-          {
-            message: `${text}\n<span style="display:block; text-align:right;">${new Date(
-              createdAt
-            ).toLocaleTimeString("fa-IR", {
-              hour: "2-digit",
-              minute: "2-digit",
-            })}</span>`,
-            sender: "support",
-          },
-        ]);
+        setMessages((prev) => [...prev, res.data.data]);
         setInitialList((prev) => {
           const newData = [...prev];
           const target = newData[currentIndex];
 
           newData[currentIndex] = {
             ...target,
-            messages: [
-              ...target.messages,
-              {
-                message: `${text}\n<span style="display:block; text-align:right;">${new Date(
-                  createdAt
-                ).toLocaleTimeString("fa-IR", {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                })}</span>`,
-                sender: "support",
-              },
-            ],
+            messages: [...target.messages, res.data.data],
           };
 
           return newData;
@@ -203,6 +179,52 @@ export default function ChatBoxSupported() {
         toast.error("خطا در برقراری ارتباط");
       }
       return;
+    }
+  };
+  const sendImageMessage = async (file) => {
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+      toast.error("فقط ارسال فایل تصویری مجاز است");
+      return;
+    }
+
+    const maxSize = 5 * 1024 * 1024;
+    if (file.size > maxSize) {
+      toast.error("حجم عکس نباید بیشتر از ۵ مگابایت باشد");
+      return;
+    }
+
+    setLoding(true);
+
+    try {
+      const formData = new FormData();
+      formData.append("userId", userId);
+      formData.append("image", file);
+      formData.append("type", "image");
+      formData.append("sender", "support");
+
+      const res = await axios.post("/api/chatSupported", formData);
+
+      if (res.status === 200) {
+        toast.success("عکس ارسال شد");
+        setMessages((prev) => [...prev, res.data.data]);
+        setInitialList((prev) => {
+          const newData = [...prev];
+          const target = newData[currentIndex];
+
+          newData[currentIndex] = {
+            ...target,
+            messages: [...target.messages, res.data.data],
+          };
+
+          return newData;
+        });
+      }
+    } catch (err) {
+      toast.error("ارسال عکس ناموفق بود");
+    } finally {
+      setLoding(false);
     }
   };
   return (
@@ -260,30 +282,68 @@ export default function ChatBoxSupported() {
           <div
             style={{ width: "350px", height: "450px", position: "relative" }}
           >
+            <input
+              type="file"
+              accept="image/*"
+              id="chat-image-upload"
+              style={{ display: "none" }}
+              onChange={(e) => sendImageMessage(e.target.files[0])}
+            />
+
             <MainContainer>
               <ChatContainer>
                 <MessageList>
-                  {messages.map((m, i) => (
-                    <Message
-                      key={i}
-                      model={{
-                        message: m.message,
-                        sender: m.sender, // ⚡ user یا support
-                        sentTime: m.sentTime,
-                        direction:
-                          m.sender === "user" ? "outgoing" : "incoming",
-                      }}
-                      className={
-                        m.sender === "user"
-                          ? styles.userMessage
-                          : styles.supportMessage
-                      }
-                    />
-                  ))}
+                  {(messages || []).map((m, i) => {
+                    if (m.type === "text") {
+                      return (
+                        <Message
+                          key={i}
+                          model={{
+                            message: m.content,
+                            direction:
+                              m.sender === "user" ? "outgoing" : "incoming",
+                          }}
+                          className={
+                            m.sender === "user"
+                              ? styles.userMessage
+                              : styles.supportMessage
+                          }
+                        />
+                      );
+                    }
+
+                    if (m.type === "image") {
+                      return (
+                        <Message
+                          key={i}
+                          type="image"
+                          className={
+                            m.sender === "user"
+                              ? styles.usercustomImageMessage
+                              : styles.supportcustomImageMessage
+                          }
+                          model={{
+                            direction:
+                              m.sender === "user" ? "outgoing" : "incoming",
+                            payload: {
+                              src: m.content,
+                            },
+                          }}
+                        />
+                      );
+                    }
+
+                    return null;
+                  })}
                 </MessageList>
+
                 <MessageInput
                   placeholder="پیام خود را بنویسید..."
                   onSend={sendMessage}
+                  attachButton
+                  onAttachClick={() =>
+                    document.getElementById("chat-image-upload").click()
+                  }
                 />
               </ChatContainer>
             </MainContainer>

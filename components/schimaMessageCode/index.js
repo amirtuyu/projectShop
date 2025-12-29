@@ -113,19 +113,24 @@ export function verificationTemplate({ trackingCode, name }) {
 
 <body>
 
+<!-- متن ساده برای افزایش Deliverability در Gmail -->
+<p style="display:none;">
+  ایمیل اعلان ارسال سفارش شما از سایت ما
+</p>
+
 <div class="container">
 
   <div class="header">
-    <h1>ارسال سفارش شما</h1>
+    <h1>سفارش شما با موفقیت ارسال شد</h1>
   </div>
 
   <div class="content">
 
-    <p class="hello">عزیز 🌿 ${name} سلام</p>
+    <p class="hello">سلام ${name} عزیز 🌿</p>
 
     <p>
       سفارش شما با موفقیت <strong>ارسال شد</strong> ✨  
-      جهت پیگیری وضعیت بسته خود، می‌توانید از کد رهگیری زیر استفاده کنید.
+      برای پیگیری وضعیت بسته خود، از کد رهگیری زیر استفاده کنید.
     </p>
 
     <div class="track-box">
@@ -134,14 +139,13 @@ export function verificationTemplate({ trackingCode, name }) {
     </div>
 
     <div style="text-align:center;">
-      <a href="https://www.post.ir/" class="button" target="_blank">
+      <a href="https://www.post.ir/" class="button" target="_blank" rel="noopener">
         پیگیری آنلاین مرسوله
       </a>
     </div>
 
     <div class="info-box">
-      در صورت نیاز به راهنمایی بیشتر، تیم پشتیبانی ما همیشه در کنار شماست.
-      <br />
+      اگر نیاز به راهنمایی بیشتری داشتید، تیم پشتیبانی ما در کنار شماست.<br />
       از اینکه به ما اعتماد کردید، سپاسگزاریم 💙
     </div>
 
@@ -157,4 +161,3 @@ export function verificationTemplate({ trackingCode, name }) {
 </html>
   `;
 }
-

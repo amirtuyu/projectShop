@@ -6,8 +6,22 @@ const messageSchema = new Schema({
     enum: ["user", "support"],
     required: true,
   },
-  message: { type: String, required: true },
-  createdAt: { type: Date, default: Date.now },
+
+  type: {
+    type: String,
+    enum: ["text", "image"],
+    required: true,
+  },
+
+  content: {
+    type: String,
+    required: true,
+  },
+
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 const chatSchema = new Schema({

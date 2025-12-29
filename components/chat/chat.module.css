@@ -5,7 +5,6 @@
   text-align: center !important;
 }
 
-
 .supportMessage {
   display: flex !important; /* برای کنترل جهت محتوا */
   justify-content: left !important;
@@ -26,6 +25,20 @@
   right: 150px;
   z-index: 1;
 }
+.cs-message__image img {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+/* chatSupported.module.css */
+.customImageMessage img {
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: cover; /* یا contain */
+  border-radius: 8px;
+}
+
 @keyframes rotation {
   0% {
     transform: rotate(0deg);

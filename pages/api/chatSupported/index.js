@@ -2,7 +2,12 @@ import Chat from "@/models/Chat";
 import User from "@/models/User";
 import ValidateToken from "@/utils/auth";
 import connectDB from "@/utils/connectDB";
-import { message } from "antd";
+import upload from "@/utils/upload";
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
 
 export default async function handler(req, res) {
   if (req.method !== "POST" && req.method !== "GET") {
@@ -32,67 +37,100 @@ export default async function handler(req, res) {
       name: `${chat.userId.firstName} ${chat.userId.lastName}`,
       messages: chat.messages.map((m) => ({
         sender: m.sender,
-        message: `${
-          m.message
-        }\n<span style="display:block; text-align:right;">${new Date(
-          m.createdAt
-        ).toLocaleTimeString("fa-IR", {
-          hour: "2-digit",
-          minute: "2-digit",
-        })}</span>`,
-        createdAt: m.createdAt,
+        type: m.type,
+        content:
+          m.type === "text"
+            ? `${
+                m.content
+              }\n<span style="display:block; text-align:right;">${new Date(
+                m.createdAt
+              ).toLocaleTimeString("fa-IR", {
+                hour: "2-digit",
+                minute: "2-digit",
+              })}</span>`
+            : m.content,
       })),
     }));
     res.status(200).json(formattedChats);
   }
   //_______POST________
   if (req.method === "POST") {
-    if (
-      typeof req.body !== "object" ||
-      req.body === null ||
-      !req.body.userId ||
-      !req.body.message ||
-      !req.body.message.message ||
-      !req.body.message.sender
-    ) {
-      return res.status(401).json({ message: "ساختار پیام ارسالی اشتباه است" });
-    }
-  }
-  let chat = await Chat.findOne({ userId: req.body.userId });
-  if (!chat) {
-    return res.status(401).json({ message: "ساختار پیام ارسالی اشتباه است" });
-  } else {
-    chat.messages.push(req.body.message);
-    chat.isRead = req.body.message.sender === "support" ? true : false;
-    chat.isReadForClient = req.body.message.sender === "support" ? true : false;
-    await chat.save();
-    const now = new Date();
+    return upload.single("image")(req, res, async (err) => {
+      if (err) return res.status(400).json({ message: err.message });
 
-    const formattedMessage = {
-      message: `${
-        req.body.message.message
-      }\n<span style="display:block; text-align:right;">${now.toLocaleTimeString(
-        "fa-IR",
-        {
+      const { userId, type, content } = req.body;
+
+      if (!userId) {
+        return res.status(422).json({ message: "userId ارسال نشده" });
+      }
+
+      if (!["text", "image"].includes(type)) {
+        return res.status(422).json({ message: "type نامعتبر است" });
+      }
+
+      let finalContent;
+
+      if (type === "text") {
+        if (!content?.trim()) {
+          return res.status(422).json({ message: "متن پیام نامعتبر است" });
+        }
+        finalContent = content.trim();
+      }
+
+      if (type === "image") {
+        if (!req.file) {
+          return res.status(422).json({ message: "عکس ارسال نشده" });
+        }
+        finalContent = `/uploads/chat/${req.file.filename}`;
+      }
+
+      const chat = await Chat.findOne({ userId });
+      if (!chat) {
+        return res.status(404).json({ message: "چت مورد نظر یافت نشد" });
+      }
+
+      const newMessage = {
+        sender: "support",
+        type,
+        content: finalContent,
+        createdAt: new Date(),
+      };
+
+      chat.messages.push(newMessage);
+      chat.isRead = true;
+      chat.isReadForClient = true;
+      await chat.save();
+
+      // پیام فرمت‌شده برای سوکت (نه DB)
+      const formattedMessage = {
+        sender: "support",
+        type,
+        content:
+          type === "text"
+            ? `${content}\n<span style="display:block; text-align:right;">${new Date().toLocaleTimeString(
+                "fa-IR",
+                {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                }
+              )}</span>`
+            : finalContent,
+        time: new Date(newMessage.createdAt).toLocaleTimeString("fa-IR", {
           hour: "2-digit",
           minute: "2-digit",
-        }
-      )}</span>`,
-      sender: req.body.message.sender,
-      sentTime: now.toLocaleTimeString("fa-IR", {
-        hour: "2-digit",
-        minute: "2-digit",
-      }),
-    };
+        }),
+      };
 
-    const io = res.socket.server.io;
+      const io = res.socket.server.io;
+      if (io) {
+        io.to(userId).emit("newMessage", formattedMessage);
+      }
 
-    if (io) {
-      io.to(req.body.userId).emit("newMessage", formattedMessage);
-    }
-    return res
-      .status(200)
-      .json({ message: "پیام شما برای کاربر مورد نظر ارسال شد" });
+      return res.status(200).json({
+        message: "پیام پشتیبانی ارسال شد",
+        data: formattedMessage,
+      });
+    });
   }
 }
 
