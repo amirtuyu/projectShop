@@ -1,13 +1,9 @@
 {
-  "platform": "node",
+  "app": "interesting-ptolemy-ca6ydnplz",
   "port": 3000,
   "build": {
-    "builder": "npm",
-    "args": {
-      "run": "build"
-    }
+    "location": "iran"
   },
-  "start": "npm start",
   "disks": [
     {
       "name": "amirtuyu4243",
@@ -15,7 +11,3 @@
     }
   ]
 }
-
-
-
-
