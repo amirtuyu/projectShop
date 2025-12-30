@@ -2,7 +2,7 @@ import Chat from "@/models/Chat";
 import User from "@/models/User";
 import ValidateToken from "@/utils/auth";
 import connectDB from "@/utils/connectDB";
-import upload from "@/utils/upload"; // فرض: multer اینجاست
+import upload from "@/utils/upload"; 
 export const config = {
   api: {
     bodyParser: false,
@@ -47,7 +47,7 @@ export default async function handler(req, res) {
       if (type === "image") {
         if (!req.file)
           return res.status(422).json({ message: "عکس ارسال نشده" });
-        content = `/uploads/chat/${req.file.filename}`;
+        content = `/api/uploads/chat/${req.file.filename}`;
       }
 
       const newMessage = {

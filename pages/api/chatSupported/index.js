@@ -81,7 +81,7 @@ export default async function handler(req, res) {
         if (!req.file) {
           return res.status(422).json({ message: "عکس ارسال نشده" });
         }
-        finalContent = `/uploads/chat/${req.file.filename}`;
+        finalContent = `/api/uploads/chat/${req.file.filename}`;
       }
 
       const chat = await Chat.findOne({ userId });
