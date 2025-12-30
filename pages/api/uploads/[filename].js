@@ -4,7 +4,12 @@ import path from "path";
 export default function handler(req, res) {
   const { filename } = req.query;
 
-  const filePath = path.join("/uploads/chat", filename);
+  const filePath = path.join(
+    process.cwd(),
+    "uploads",
+    "chat",
+    filename
+  );
 
   if (!fs.existsSync(filePath)) {
     return res.status(404).json({ message: "File not found" });
