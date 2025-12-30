@@ -259,7 +259,11 @@ export default function ChatBox() {
                         <Message
                           key={i}
                           type="image"
-                          className={styles.customImageMessage}
+                          className={
+                            m.sender === "user"
+                              ? styles.usercustomImageMessage
+                              : styles.supportcustomImageMessage
+                          }
                           model={{
                             direction:
                               m.sender === "user" ? "outgoing" : "incoming",

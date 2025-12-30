@@ -1,4 +1,14 @@
 {
-    "port":3000
+  "platform": "node",
+  "build": "npm run build",
+  "start": "npm start",
+  "port": 3000,
+  "disks": [
+    {
+      "name": "amirtuyu4243",
+      "mountTo": "/uploads/chat"
+    }
+  ]
 }
+
 

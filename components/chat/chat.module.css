@@ -32,11 +32,19 @@
   object-fit: cover;
 }
 /* chatSupported.module.css */
-.customImageMessage img {
+.usercustomImageMessage img {
   max-width: 150px;
   max-height: 150px;
   object-fit: cover; /* یا contain */
   border-radius: 8px;
+  margin-left: 100px;
+}
+.supportcustomImageMessage img {
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: cover; /* یا contain */
+  border-radius: 8px;
+  margin-right: 100px;
 }
 
 @keyframes rotation {

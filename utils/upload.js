@@ -1,10 +1,10 @@
 import multer from "multer";
-import path from "path";
 import fs from "fs";
+import path from "path";
 import crypto from "crypto";
 
-// مسیر ذخیره عکس‌ها
-const uploadDir = path.join(process.cwd(), "public/uploads/chat");
+// مسیر دیسک mount شده در لیارا
+const uploadDir = "/uploads/chat";
 
 // اگر فولدر وجود نداشت بساز
 if (!fs.existsSync(uploadDir)) {
@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 
   filename: (req, file, cb) => {
     const ext = path.extname(file.originalname);
-    const uniqueName = crypto.randomUUID(); // نام یکتا
+    const uniqueName = crypto.randomUUID();
     cb(null, `${uniqueName}${ext}`);
   },
 });
