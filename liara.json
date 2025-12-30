@@ -1,8 +1,11 @@
 {
   "platform": "node",
-  "build": "npm run build",
-  "start": "npm start",
   "port": 3000,
+  "build": {
+    "builder": "npm",
+    "args": ["run", "build"]
+  },
+  "start": "npm start",
   "disks": [
     {
       "name": "amirtuyu4243",
@@ -10,5 +13,6 @@
     }
   ]
 }
+
 
 
