@@ -7,7 +7,7 @@
   "disks": [
     {
       "name": "amirtuyu4243",
-      "mountTo": "/public/uploads/chat"
+      "mountTo": "/uploads/chat"
     }
   ]
 }
