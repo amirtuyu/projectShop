@@ -26,6 +26,11 @@ export default async function handler(req, res) {
   //  POST
   if (req.method === "POST") {
     return upload.single("image")(req, res, async (err) => {
+      if (!payload) {
+      return res.status(401).json({
+        message: "برای ارتباط با پشتیبانی لطفا ثبت نام یا ورود انجام دهید",
+      });
+      }
       if (err) return res.status(400).json({ message: err.message });
 
       const { type, sender, content: textContent } = req.body;
