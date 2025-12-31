@@ -11,7 +11,7 @@ export const config = {
 
 export default async function handler(req, res) {
   if (!["POST", "GET", "PUT"].includes(req.method)) {
-    return res.status(405).json({ message: "متد نامعتبر است" });
+    return res.status(405).json({ message: "برای ارتباط با پشتیبانی ورود یا ثبت نام انجام دهید" });
   }
 
   await connectDB();
