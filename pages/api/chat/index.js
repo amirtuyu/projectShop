@@ -11,14 +11,14 @@ export const config = {
 
 export default async function handler(req, res) {
   if (!["POST", "GET", "PUT"].includes(req.method)) {
-    return res.status(405).json({ message: "برای ارتباط با پشتیبانی ورود یا ثبت نام انجام دهید" });
+    return res.status(405).json({ message: "متد درخواستی نامعتبر" });
   }
 
   await connectDB();
 
   const payload = ValidateToken({ req });
   if (!payload) {
-    return res.status(401).json({ message: "احراز هویت ناموفق" });
+    return res.status(401).json({ message: "برای ارتباط با پشتیبانی لطفا ثبت نام یا ورود انجام دهید" });
   }
 
   const userID = payload.userId;
